@@ -1,4 +1,4 @@
-# Itens relevantes a respeito do Capítulo 2 - SWEBOK[https://ieeecs-media.computer.org/media/education/swebok/swebok-v3.pdf]
+# Itens relevantes a respeito do Capítulo 2 - [SWEBOK](https://ieeecs-media.computer.org/media/education/swebok/swebok-v3.pdf)
 
 - Design de software pode ser definido de duas formas:
   - do ponto de vista do processo: definição da arquitetura, dos componentes, interfaces e outras características do sistema e componentes.
