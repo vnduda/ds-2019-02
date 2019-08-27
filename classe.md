@@ -14,4 +14,4 @@
 - (Software para Sistemas Ubíquos, Domínios de software)
 - (Software para persistência de dados, Domínios de software)
 
-*prática em engenharia de software*: depende de todas anteriores
+- *prática em engenharia de software*: depende de todas anteriores
