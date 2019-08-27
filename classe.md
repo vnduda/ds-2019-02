@@ -1,8 +1,8 @@
 ## Pares de matérias que possuem dependências
 
-(Construção de software, Design de software)
-(Design de software, Requisitos de software)
-(Engenharia de Sistemas, Gerência de projeto de software)
+- (Construção de software, Design de software)
+- (Design de software, Requisitos de software)
+- (Engenharia de Sistemas, Gerência de projeto de software)
 (Design de software, Arquitetura de software)
 (Processos de software, Processos de qualidade de software)
 (Modelagem de software, Domínios de software)
