@@ -6,5 +6,5 @@
   - Converter em bytecodes com a biblioteca Javassist
   - Será armazenado em um arquivo .class
   - Receberá os valores das variáveis e irá acessar o .class criado com ajuda do Java Reflection
-  
+  - Map < String, Double >
   
