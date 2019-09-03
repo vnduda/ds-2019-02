@@ -4,13 +4,7 @@
 - Requisitos:
   - Receber uma String contendo a expressão matemática
   - Converter em bytecodes com a biblioteca Javassist
-  -
+  - Será armazenado em um arquivo .class
+  - Receberá os valores das variáveis e irá acessar o .class criado com ajuda do Java Reflection
   
   
-- Dúvidas sobre os requisitos:
-  - Como será armazenado as expressões?
-  - Armazenar expressão ou o resultado dela?
-  - variaveis vao ser convertidas pra bytecodes?
-  
-
-
