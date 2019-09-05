@@ -3,7 +3,7 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
 
 ### Requisitos (preliminares):
   - R1 Uma expressão matemática deve ser recebida como uma sequência de caracteres e ter seu valor avaliado, em conformidade com os valores das variáveis empregadas. 
-  - R2 Caso não seja passado os valores das variáveis, não será avaliado.
+  - R2 Caso não seja passado os valores das variáveis, a expressão não será avaliada.
   - R3 A expressão matemática está restrita a valores numéricos (ou tipo _Double_ em Java). 
   - R4 A expressão matemática recebida como entrada deve ser convertida para _bytecodes_ por meio do uso da biblioteca [Javassist](https://www.javassist.org/). Observação: embora seja uma decisão típica de _design_, esta é uma restrição imposta ao desenvolvimento do módulo.
   
