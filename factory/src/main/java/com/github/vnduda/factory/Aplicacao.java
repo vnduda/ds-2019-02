@@ -1,4 +1,4 @@
-package factory;
+package com.github.vnduda.factory;
 
 import java.lang.reflect.InvocationTargetException;
 
