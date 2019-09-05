@@ -1,4 +1,4 @@
-package com.github.vnduda.factory;
+package com.github.vnduda.factory.domain;
 
 import java.lang.reflect.InvocationTargetException;
 
