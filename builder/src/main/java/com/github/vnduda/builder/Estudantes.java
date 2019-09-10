@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+// TODO era para ser no plural, vários estudantes? Uma coleção?
 public class Estudantes {
 	
 	private List<String> nomes;
@@ -90,6 +91,7 @@ public class Estudantes {
         final String parcial = String.join(" ",
                 une(titulos), une(nomes), une(sobrenomes), une(matriculas), une(cpf));
  
+	// TODO imaginava ter colocado um comentário aqui. Não merece?
         return parcial.trim().replaceAll(" +", " ");
     }
 
