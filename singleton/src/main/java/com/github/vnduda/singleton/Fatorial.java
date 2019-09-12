@@ -10,6 +10,7 @@ public final class Fatorial {
 	private static final Fatorial INSTANCIA = criaInstancia();
 	
 	public static int calcule(int valor) {
+		// FIXME nenhuma verificação foi fornecida
 		return IntStream.rangeClosed(2, valor).reduce(1, (x, y) -> x * y);
 	}
 	
