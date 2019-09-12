@@ -9,7 +9,7 @@ public final class Fatorial {
 	 */
 	private static final Fatorial INSTANCIA = criaInstancia();
 	
-	public int calcule(int valor) {
+	public static int calcule(int valor) {
 		return IntStream.rangeClosed(2, valor).reduce(1, (x, y) -> x * y);
 	}
 	
