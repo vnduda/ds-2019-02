@@ -8,7 +8,7 @@ public final class Fatorial {
 	private static final Fatorial INSTANCIA = criaInstancia();
 	
 	private int CalculoFatorial(int valor) {
-		int fat;
+		int fat = 0;
 
 		for(int i = 2; i <= valor; i++){
 			fat *= i;
