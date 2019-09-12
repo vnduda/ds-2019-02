@@ -17,6 +17,10 @@ public final class Fatorial {
 	public static Fatorial getInstance() {
 		return INSTANCIA;
 	}
-	
-	
+
+	/**
+	 * Exigido para implementação do Singleton.
+	 */
+	private Fatorial() {
+	}
 }
