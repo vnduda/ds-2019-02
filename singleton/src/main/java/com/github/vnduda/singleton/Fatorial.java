@@ -1,5 +1,7 @@
 package com.github.vnduda.singleton;
 
+import java.util.stream.IntStream;
+
 public final class Fatorial {
 	
 	/**
@@ -8,12 +10,7 @@ public final class Fatorial {
 	private static final Fatorial INSTANCIA = criaInstancia();
 	
 	public int calcule(int valor) {
-		int fat = 0;
-
-		for(int i = 2; i <= valor; i++){
-			fat *= i;
-		}
-		return fat;
+		return IntStream.rangeClosed(2, valor).reduce(1, (x, y) -> x * y);
 	}
 	
 	private static Fatorial criaInstancia() {
