@@ -8,13 +8,13 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - R4 A expressão matemática recebida como entrada deve ser convertida para _bytecodes_ por meio do uso da biblioteca [Javassist](https://www.javassist.org/). Observação: embora seja uma decisão típica de _design_, esta é uma restrição imposta ao desenvolvimento do módulo.
   
  ### Anotações gerais (_design_)
-  # Versão 1
+  #### Versão 1
   - Converter em bytecodes com a biblioteca Javassist
   - Será armazenado em um arquivo .class
   - Receberá os valores das variáveis e irá acessar o .class criado com ajuda do Java Reflection
   - Map < String, Double >
   
-  # Versão 2
+  ##### Versão 2
   - Converter em bytecodes com a biblioteca Javassist
   - Será armazenado em um arquivo .class
   - Receberá os valores das variáveis e irá acessar o .class criado com ajuda do Java Reflection
