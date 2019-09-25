@@ -12,9 +12,9 @@ class NumeroTelefonicoTest {
     @Test
     void verificaNumero() {
         NumeroTelefonico numero = new NumeroTelefonico("+55", "62", "123456789");
-        Set<NumeroTelefonico> c = new HashSet<>();
-        c.add(numero);
+        Set<NumeroTelefonico> conjunto = new HashSet<>();
+        conjunto.add(numero);
         NumeroTelefonico numeroBusca = new NumeroTelefonico("+55", "62", "123456789");
-        assertTrue(c.contains(numeroBusca));
+        assertTrue(conjunto.contains(numeroBusca));
     }
 }
