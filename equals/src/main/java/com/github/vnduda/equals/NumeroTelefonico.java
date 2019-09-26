@@ -28,6 +28,8 @@ public class NumeroTelefonico {
 
         NumeroTelefonico outro = (NumeroTelefonico) obj;
 
+        // FIXME Orientei de forma enganosa. O Werberth perguntou a diferença entre == e equals, eu expliquei. Contudo,
+        // na hora em que estave "implementando" sugeri equivocadamente o uso do ==. Com este equals, seu teste deve falhar!!!
         return codigoEstado == outro.codigoEstado && codigoPais == outro.codigoPais && numeroDoTelefone == outro.numeroDoTelefone;
     }
 
