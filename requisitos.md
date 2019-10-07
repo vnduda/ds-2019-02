@@ -21,6 +21,6 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - Receberá os valores das variáveis e irá acessar o .class criado com ajuda do Java Reflection
   - _avalie_ é o método da interface _ExpEvaluate_, que receberá uma String _exp_ e um dicionário contendo String e Double de valores de variáveis das expressões a serem recebidas pelo usuário.
   - O método _avalie_ terá um _id_ sempre que uma nova expressão for colocada, para ser guardada e usada diversas vezes sem precisar de uma nova compilação
-  - Expressao carregar (String id)
-  - Expressao define (String _exp_)
+  - Expressao _carregar_ que recebe como parâmetros (String id)
+  - Expressao _define_ que recebe como parâmetros (String _exp_)
   - avalie(Expressao exp, Map < String, Double > valores)
