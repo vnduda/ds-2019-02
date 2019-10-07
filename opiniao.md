@@ -1,0 +1,11 @@
+#### Você acredita que há um algoritmo para projetar “estações móveis de produção de sanduíche”? Quando o algoritmo é executado temos como resultado um “projeto” que atende os requisitos e detalha a estação móvel?
+  - Acredito que não há algoritmo para projetar estações móveis de produção de sanduíche. Podem ter coisas em comum na produção de um sanduiche porém cada um vai ter sua variação de requisitos e por isso necessitar de um aparelho de produção diferente. Quanto ao resultado, ele pode atender os requisitos e detalha a estação móvel de forma parcial, total, ou não atender aos requsitos.
+
+#### Você acredita que há um algoritmo para projetar software? Quando o algoritmo é executado temos como resultado um conjunto de módulos, ou no caso do algoritmo optar pelo projeto orientado a objetos teríamos um diagrama de classes, interfaces, a herança, a organização destes elementos em grupos (packages), a identificação de métodos e outros detalhes que, quando implementados e colocados em execução, atendem os requisitos estabelecidos?
+  - Não acho que há apenas um algoritmo para projetar software. Cada caso é um caso diferente com suas peculiaridades e requisitos. Ele só atenderá os requisitos caso o algoritmo sirva para o determinado caso do projeto de sw em questão.
+
+#### Steve McConnell, no livro Code Complete, 2nd edition, Capítulo 5, afirma: “em projetos informais, muito do esforço de design é realizado enquanto programadores estão diante do teclado. O design é escrever em pseudocódigo a interface de uma classe, ou desenhar diagramas registrando o relacionamento entre algumas classes, ou perguntar a um outro programador qual padrão de projeto é uma melhor escolha.” Você concorda?
+  - Concordo
+
+#### Steve McConnell, no livro Code Complete, 2nd edition, Capítulo 5, afirma: “técnicas de projeto tendem a ser “heurísticas”, “regras práticas” ou “coisas para tentar que algumas vezes funcionam” em vez de processos que podem ser repetidos e que produzem resultados previsíveis. Design envolve tentativa e erro. Uma técnica ou ferramenta que funciona bem em um cenário ou em algum aspecto de um cenário pode não funcionar no próximo projeto.” Você concorda? 
+  - Concordo, cada projeto tem suas peculiaridades e diferenças dos demais.
