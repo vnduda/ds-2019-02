@@ -35,3 +35,4 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - Expressao _define_ que irá receber como parâmetro uma String _exp_
   - Método Avalie consiste em:
     - _avalie_(Expressao exp, Map < String, Double > valores)
+  - Caso seja passado um valor inválido para variável, uma excessão deverá ser gerada.
