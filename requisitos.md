@@ -36,3 +36,39 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - Método Avalie consiste em:
     - _avalie_(Expressao exp, Map < String, Double > valores)
   - Caso seja passado um valor inválido para variável, uma excessão deverá ser gerada.
+  
+#### Versão 4
+  - Converter a expressão matemática em bytecodes. Dada uma expressão, é criado um método específico para ela em uma dada classe.
+  - Esse código gerado para a expressão seria compilado, gerando os bytecodes, que serão depositados em um arquivo .class.
+  - Essa compilação é realizada pelo Javassist
+  - Os bytecodes gerados, que serão armazenados em um arquivo .class, poderá seguir o seguinte [exemplo](https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files) para "carregar" uma classe disponível em um diretório cujo nome é conhecido.
+  - Com a classe carregada (veja passo anterior), pode ser criado uma instância dela, da seguinte [forma]().
+  - A instância criada (passo anterior), diagamos _instancia_, deverá receber uma mensagem. A princípio chamada _instancia.avalie_, onde esse método tem assinatura _double avalie(Map < String, Double >)_
+  ```` java
+  public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
+  
+    public static double x;
+    public static double y;
+
+    public static double avalie() {
+       return x + y;
+    }
+  }
+  ````
+  ou 
+  ```` java
+  public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
+  
+    public double avalie(Map<String, Double> contexto) {
+       // Para cada variável v empregada na expressão 
+      // Recuperar o valor de v, ou seja, contexto.get("v")
+      // Atribuir o valor recuperado à variável correspondente
+      // x = context.get("x")
+      // A expressão recebida para ser avaliada  retornada abaixo
+      return x + y; 
+     }
+  }
+  ````
+  
+  - É necessário, a partir de uma dada expressão, obter uma lista dos nomes das variáveis (List).
+  - Caso seja passado um valor inválido para variável, uma excessão deverá ser gerada.
