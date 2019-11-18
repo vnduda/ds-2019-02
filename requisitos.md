@@ -38,11 +38,12 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - Caso seja passado um valor inválido para variável, uma excessão deverá ser gerada.
   
 #### Versão 4
-  - Converter a expressão matemática em bytecodes. Dada uma expressão, é criado um método específico para ela em uma dada classe.
-  - Esse código gerado para a expressão seria compilado, gerando os bytecodes, que serão depositados em um arquivo .class.
-  - Essa compilação é realizada pelo Javassist
-  - Os bytecodes gerados, que serão armazenados em um arquivo .class, poderá seguir o seguinte [exemplo](https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files) para "carregar" uma classe disponível em um diretório cujo nome é conhecido.
-  - Com a classe carregada (veja passo anterior), pode ser criado uma instância dela, da seguinte [forma]().
+  - Converter a expressão matemática em bytecodes. Dada uma expressão, é criado um método específico para ela em uma dada classe. **Ok, mas como fazer isso?**
+  - Esse código gerado para a expressão seria compilado (**código em bytecodes já está compilado**), gerando os bytecodes, que serão depositados em um arquivo .class.
+  - Essa compilação é realizada pelo Javassist. **A rigor, o Javassist não realiza compilação, mas apenas facilita a interação com bytecodes. Um aspecto positivo é que esta biblioteca possui uma interface de alto nível.**
+  - Veja o que encontrei em uma consulta no Google: https://javaranch.com/journal/200711/creating_java_classes_runtime_expression_evaluation.html. Se o que está no artigo citado é útil, você terá que investigar. Se afirmativo, seu _design_ pode se beneficiar de forma significativa da estratégia adotada. Isto porque, até este ponto, não há exatamente um _design_, mas "passos", ou "partes". 
+  - Os bytecodes gerados, que serão armazenados em um arquivo .class, poderá seguir o seguinte [exemplo](https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files) para "carregar" uma classe disponível em um diretório cujo nome é conhecido. **Usar este link para se basear na carga de uma classe gerada, é isso?**
+  - Com a classe carregada (veja passo anterior), pode ser criado uma instância dela, da seguinte [forma](). **Como?**
   - A instância criada (passo anterior), diagamos _instancia_, deverá receber uma mensagem. A princípio chamada _instancia.avalie_, onde esse método tem assinatura _double avalie(Map < String, Double >)_
   ```` java
   public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
@@ -70,5 +71,6 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   }
   ````
   
-  - É necessário, a partir de uma dada expressão, obter uma lista dos nomes das variáveis (List).
+  - É necessário, a partir de uma dada expressão, obter uma lista dos nomes das variáveis (List). **Como? Se você sabe como fazer isso, simplesmente indique aqui.**
   - Caso seja passado um valor inválido para variável, uma excessão deverá ser gerada.
+  - **Como chamar o método avalie, qualquer um daqueles acima?** 
