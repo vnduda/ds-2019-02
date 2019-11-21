@@ -44,7 +44,7 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
     public double eval (double x) { return (" + args[0] + ") ; }
     
   A fórmula que será avaliada é passada como um parâmetro args, e se torna parte do método.
-  - Esse código gerado em bytecodes para a expressão já está compilado (**código em bytecodes já está compilado**), gerando os bytecodes, que serão depositados em um arquivo .class.
+  - Esse código gerado em bytecodes para a expressão já está compilado, e serão depositados em um arquivo .class.
   - Essa compilação é realizada pelo Javassist. **A rigor, o Javassist não realiza compilação, mas apenas facilita a interação com bytecodes. Um aspecto positivo é que esta biblioteca possui uma interface de alto nível.**
   - Veja o que encontrei em uma consulta no Google: https://javaranch.com/journal/200711/creating_java_classes_runtime_expression_evaluation.html. Se o que está no artigo citado é útil, você terá que investigar. Se afirmativo, seu _design_ pode se beneficiar de forma significativa da estratégia adotada. Isto porque, até este ponto, não há exatamente um _design_, mas "passos", ou "partes". 
   - Os bytecodes gerados, que serão armazenados em um arquivo .class, poderá seguir o seguinte [exemplo](https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files) para "carregar" uma classe disponível em um diretório cujo nome é conhecido. Ou seja, usar este link para se basear na carga de uma classe gerada.
