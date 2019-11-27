@@ -46,7 +46,7 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - R5 A expressão deve possuir um identificador para ser armazenada e chamada diversas vezes sem precisar de uma nova compilação
   
   ##### Visão geral do design
-    - A visão geral do design desse problema consiste em, primeiramente receber a expressão (do tipo String) gerada em tempo de execução, possivelmente com valores não utilizados anteriormente (não é uma regra). Caso essa expressão nunca tenha sido utilizada anteriormente, é feito a conversão da expressão em bytecodes e um método específico para ela é criado em uma classe, dentro de um arquivo .class. E em caso da expressão já ter sido utilizada anteriormente, usar o Java Reflection para criar a instância e chamadar o método que calcula a expressão. A biblioteca Javassist entra como um facilitador na hora de interagir com os bytecodes gerados. Após isso é necessário carregar a classe gerada em um diretório cujo nome é conhecido.
+   A visão geral do design desse problema consiste em, primeiramente receber a expressão (do tipo String) gerada em tempo de execução, possivelmente com valores não utilizados anteriormente (não é uma regra). Caso essa expressão nunca tenha sido utilizada anteriormente, é feito a conversão da expressão em bytecodes e um método específico para ela é criado em uma classe, dentro de um arquivo .class. E em caso da expressão já ter sido utilizada anteriormente, usar o Java Reflection para criar a instância e chamadar o método que calcula a expressão. A biblioteca Javassist entra como um facilitador na hora de interagir com os bytecodes gerados. Após isso é necessário carregar a classe gerada em um diretório cujo nome é conhecido.
     
     
  ##### Design detalhado
@@ -62,51 +62,53 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - Os bytecodes gerados, que deverão ser armazenados em um arquivo .class, poderá seguir o seguinte [exemplo](https://stackoverflow.com/questions/6219829/method-to-dynamically-load-java-class-files) para "carregar" uma classe disponível em um diretório cujo nome é conhecido. Ou seja, usar este link para se basear na carga de uma classe gerada.  
   - Após a criação da classe, o uso da biblioteca Javassist é concluído, e é possível utilizar a nova classe como qualquer outra classe carregada dinamicamente.  
   - Com a classe carregada (veja passo anterior), pode ser criado uma instância dela. Uma forma de fazer isso é utilizando o Java Reflection.  
-  ```` java
-  Object obj = clazz.newInstance();
-  ````  
+    ```` java
+    Object obj = clazz.newInstance();
+    ````  
   - Deve-se ressaltar que o Java Reflection também facilita manipularmos o método _avalie_ como feito no trecho abaixo:
-  ```` java
-  Class[] formalParams = new Class[] { double.class };
-  Method meth = clazz.getDeclaredMethod("avalie", formalParams);
-  ````  
+    ```` java
+    Class[] formalParams = new Class[] { double.class };
+    Method meth = clazz.getDeclaredMethod("avalie", formalParams);
+    ````  
   - A instância criada (passo anterior), digamos _instancia_, deverá receber uma mensagem. A princípio chamada _instancia.avalie_, onde esse método tem assinatura _double avalie(Map < String, Double >)_  
-  ```` java
-  public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
+    ```` java
+    public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
   
-    public static double x;
-    public static double y;
+      public static double x;
+      public static double y;
 
-    public static double avalie() {
-       return x + y;
+      public static double avalie() {
+         return x + y;
+      }
     }
-  }
-  ````  
+    ````  
   ou  
-  ```` java
-  public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
+    ```` java
+    public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
   
-    public double avalie(Map<String, Double> contexto) {
-       // Para cada variável v empregada na expressão 
-      // Recuperar o valor de v, ou seja, contexto.get("v")
-      // Atribuir o valor recuperado à variável correspondente
-      // x = context.get("x")
-      // A expressão recebida para ser avaliada  retornada abaixo
-      return x + y; 
-     }
-  }
-  ````  
+      public double avalie(Map<String, Double> contexto) {
+        // Para cada variável v empregada na expressão 
+        // Recuperar o valor de v, ou seja, contexto.get("v")
+        // Atribuir o valor recuperado à variável correspondente
+        // x = context.get("x")
+        // A expressão recebida para ser avaliada  retornada abaixo
+        return x + y; 
+       }
+    }
+    ````  
+    
   - Após utilizar da instânciação da classe, deve utilizar do Java Reflection para manipular o método _avalie_  
-  ```` java
-  Class[] formalParams = new Class[] { double.class };
-  Method meth = clazz.getDeclaredMethod("avalie", formalParams);
-  ````  
+  
+    ````java
+    Class[] formalParams = new Class[] { double.class };
+    Method meth = clazz.getDeclaredMethod("avalie", formalParams);
+    ````  
   - Para chamar o método, com um parâmetro e imprimi-lo pode seguir a sugestão abaixo, ou ver passo a passo detalhado em [link](https://javaranch.com/journal/200711/creating_java_classes_runtime_expression_evaluation.html):  
-  ```` java
-  Object[] actualParams = new Object[] { new Double(17) };
-  double result = ((Double) meth.invoke(obj, actualParams)).doubleValue();
-  System.out.println(result);
-  ````  
+    ```` java
+    Object[] actualParams = new Object[] { new Double(17) };
+    double result = ((Double) meth.invoke(obj, actualParams)).doubleValue();
+    System.out.println(result);
+    ````  
   - Caso seja passado um valor inválido para variável, uma excessão deverá ser gerada.  
 
 
