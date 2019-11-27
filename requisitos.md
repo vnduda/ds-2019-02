@@ -46,13 +46,12 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - R5 A expressão deve possuir um identificador para ser armazenada e chamada diversas vezes sem precisar de uma nova compilação
   
   ##### Visão geral do design
-   A visão geral do design desse problema consiste em, primeiramente receber a expressão (do tipo String) gerada em tempo de execução, possivelmente com valores não utilizados anteriormente (não é uma regra). Caso essa expressão nunca tenha sido utilizada anteriormente, é feito a conversão da expressão em bytecodes e um método específico para ela é criado em uma classe, dentro de um arquivo .class. E em caso da expressão já ter sido utilizada anteriormente, usar o Java Reflection para criar a instância e chamadar o método que calcula a expressão. A biblioteca Javassist entra como um facilitador na hora de interagir com os bytecodes gerados. Após isso é necessário carregar a classe gerada em um diretório cujo nome é conhecido.
-    
+   A visão geral do design desse problema consiste em, primeiramente criar uma classe principal que irá receber a expressão (do tipo String) gerada em tempo de execução, possivelmente com valores não utilizados anteriormente (não é uma regra). Caso essa expressão nunca tenha sido utilizada anteriormente, é feito a conversão da expressão em bytecodes e um método específico para ela é criado em uma classe, dentro de um arquivo .class. E em caso da expressão já ter sido utilizada anteriormente, usar o Java Reflection para criar a instância e chamadar o método que calcula a expressão. A biblioteca Javassist entra como um facilitador na hora de interagir com os bytecodes gerados. Após isso é necessário carregar a classe gerada em um diretório cujo nome é conhecido.
     
  ##### Design detalhado
-  - 
+  - Inicialmente deve-se criar uma classe Main, onde os dados da expressão recebida posteriormente será executado.
   - Converter a expressão matemática em bytecodes. 
-  - Dada uma expressão, é criado um método específico para ela em uma dada classe (no caso de exemplo, o método se chama _avalie_). O corpo do método é:
+  - Dada uma expressão, é criado um método específico para ela na classe Main criada inicialmente (no caso de exemplo, o método se chama _avalie_). O corpo do método é:
     `````java
     public double avalie (double x) { return (" + args[0] + ") ; }  
     
@@ -72,7 +71,7 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
     ````  
   - A instância criada (passo anterior), digamos _instancia_, deverá receber uma mensagem. A princípio chamada _instancia.avalie_, onde esse método tem assinatura _double avalie(Map < String, Double >)_  
     ```` java
-    public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
+    public class Main {
   
       public static double x;
       public static double y;
@@ -84,7 +83,7 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
     ````  
     ou  
     ```` java
-    public class NomeDefinidoPossivelmenteEmTempoDeExecucao {
+    public class Main {
   
       public double avalie(Map<String, Double> contexto) {
         // Para cada variável v empregada na expressão 
