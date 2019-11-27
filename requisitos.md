@@ -49,10 +49,17 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
    A visão geral do design desse problema consiste em, primeiramente criar uma classe principal que irá receber a expressão (do tipo String) gerada em tempo de execução. Caso essa expressão nunca tenha sido utilizada anteriormente, é feito a conversão da expressão em bytecodes (é importante que as expressões sejam guardadas em disco após serem convertidas, para poderem ser utilizadas posteriormente) e um método específico para ela é criado em uma classe, dentro de um arquivo .class. E em caso da expressão já ter sido utilizada anteriormente, usar o Java Reflection para criar a instância e chamar o método que calcula a expressão. A biblioteca Javassist entra como um facilitador na hora de interagir com os bytecodes gerados. Após criar o método que calcula a expressão, é necessário chamar o mesmo com parâmetros, e imprimir o resultado. 
     
  ##### Design detalhado
+  ###### D00
+  - Calcular hc = hashCode(expr)
+  - Localizar no cache o valor hc. Se afirmativo, simplesmente fazer uso da expressão já tratada. 
   ###### D01
   - Inicialmente deve-se criar uma classe Main, onde os dados da expressão recebida posteriormente será executado.  
+  - NV. Criar uma classe para cada expressão. Cada classe possui nome único. Possivelmente, ... C + hc
   ###### D02
-  - Converter a expressão matemática em bytecodes. 
+  - Converter a expressão matemática em bytecodes (**mostrar como**)
+  - Se a expressão é "b + a", então temos duas variáveis que, em ordem alfabética são a e b. Pois será criado um método
+  avalie(double a, double b), ou seja, um compilador deverá identificar as variáveis empregadas em uma expressão. 
+  Talvez não seja necessário um compilador, mas apenas um reconhecedor de palavras, nomes. 
   ###### D03
   - Dada uma expressão, é criado um método específico para ela na classe Main criada inicialmente (no caso de exemplo, o método se chama _avalie_). O corpo do método é:
     `````java
