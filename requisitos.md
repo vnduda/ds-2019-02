@@ -60,7 +60,7 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - Se a expressão é "b + a", então temos duas variáveis que, em ordem alfabética são a e b. Pois será criado um método
   avalie(double a, double b), ou seja, um reconhecedor de palavras/nomes, deverá identificar as variáveis empregadas em uma expressão.  
   ###### D03
-  - Dada uma expressão, é criado um método específico para ela na classe criada inicialmente (no caso de exemplo, o método se chama _avalie_).
+  - Dada a expressão, é criado um método específico para ela na classe criada inicialmente (no caso de exemplo, o método se chama _avalie_).
   - A fórmula que será avaliada é passada como um parâmetro args, e se torna parte do método.  
   ###### D04
   - Esse código gerado em bytecodes para a expressão já está compilado, e serão depositados em um arquivo .class.  
