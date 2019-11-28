@@ -54,7 +54,7 @@ Avaliação de expressões matemáticas só conhecidas em tempo de execução, m
   - Calcular hc = hashCode(expr)
   - Localizar no cache o valor hc. Se afirmativo, simplesmente fazer uso da expressão já tratada.   
   ###### D01  
-  - Criar uma classe para cada expressão. Cada classe possui nome único. Possivelmente, ... C + hc  
+  - Criar uma classe para cada expressão. Cada classe possui nome único. Possivelmente, C + hc  
   ###### D02  
   - Converter a expressão matemática em bytecodes, [veja aqui como](https://tomassetti.me/generating-bytecode/)
   - Se a expressão é "b + a", então temos duas variáveis que, em ordem alfabética são a e b. Pois será criado um método
